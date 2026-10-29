@@ -46,6 +46,14 @@
   color: var(--foreground-muted);
 }
 
+/* Hide the browser's built-in clear button on type="search" inputs —
+   we provide our own close/clear affordance via trailingIcon instead. */
+.element::-webkit-search-cancel-button,
+.element::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 textarea.element {
   resize: vertical;
   min-height: 6rem;

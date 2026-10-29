@@ -35,5 +35,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico).*)"],
+  // `icon` is excluded alongside `favicon.ico` because it's a root-level
+  // metadata route (src/app/icon.tsx), not nested under `[locale]`.
+  matcher: ["/((?!_next|api|favicon.ico|icon$).*)"],
 };

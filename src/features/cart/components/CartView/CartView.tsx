@@ -104,51 +104,55 @@ export function CartView({ locale, dictionary }: CartViewProps) {
           const text = product.translations[locale];
           return (
             <li key={product.slug} className={styles.item}>
-              <Image
-                src={product.image}
-                alt={text.name}
-                width={72}
-                height={72}
-                className={styles.itemImage}
-              />
-              <div className={styles.itemInfo}>
-                <Link
-                  href={localizedPath(locale, `/products/${product.slug}`)}
-                  className={styles.itemName}
-                >
-                  {text.name}
-                </Link>
-                <span className={styles.itemPrice}>{text.price}</span>
+              <div className={styles.itemMain}>
+                <Image
+                  src={product.image}
+                  alt={text.name}
+                  width={64}
+                  height={64}
+                  className={styles.itemImage}
+                />
+                <div className={styles.itemInfo}>
+                  <Link
+                    href={localizedPath(locale, `/products/${product.slug}`)}
+                    className={styles.itemName}
+                  >
+                    {text.name}
+                  </Link>
+                  <span className={styles.itemPrice}>{text.price}</span>
+                </div>
               </div>
 
-              <div className={styles.quantity}>
+              <div className={styles.itemControls}>
+                <div className={styles.quantity}>
+                  <button
+                    type="button"
+                    className={styles.quantityButton}
+                    onClick={() => updateQuantity(product.slug, quantity - 1)}
+                    aria-label={dictionary.cart.decrease}
+                  >
+                    −
+                  </button>
+                  <span className={styles.quantityValue}>{quantity}</span>
+                  <button
+                    type="button"
+                    className={styles.quantityButton}
+                    onClick={() => updateQuantity(product.slug, quantity + 1)}
+                    aria-label={dictionary.cart.increase}
+                  >
+                    +
+                  </button>
+                </div>
+
                 <button
                   type="button"
-                  className={styles.quantityButton}
-                  onClick={() => updateQuantity(product.slug, quantity - 1)}
-                  aria-label={dictionary.cart.decrease}
+                  className={styles.remove}
+                  onClick={() => removeItem(product.slug)}
+                  aria-label={dictionary.cart.remove}
                 >
-                  −
-                </button>
-                <span className={styles.quantityValue}>{quantity}</span>
-                <button
-                  type="button"
-                  className={styles.quantityButton}
-                  onClick={() => updateQuantity(product.slug, quantity + 1)}
-                  aria-label={dictionary.cart.increase}
-                >
-                  +
+                  ×
                 </button>
               </div>
-
-              <button
-                type="button"
-                className={styles.remove}
-                onClick={() => removeItem(product.slug)}
-                aria-label={dictionary.cart.remove}
-              >
-                ×
-              </button>
             </li>
           );
         })}

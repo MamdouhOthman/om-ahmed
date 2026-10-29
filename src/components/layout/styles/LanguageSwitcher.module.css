@@ -14,3 +14,16 @@
 .link:focus-visible {
   background: var(--surface-muted);
 }
+
+@media (max-width: 640px) {
+  .link {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .label {
+    display: none;
+  }
+}

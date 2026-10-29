@@ -5,7 +5,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import styles from "@/components/layout/styles/HeaderSearch.module.css";
 import { Input } from "@/components/ui/Input";
 import { Image } from "@/components/ui/Image";
-import { SearchIcon } from "@/components/ui/icons";
+import { CloseIcon, SearchIcon } from "@/components/ui/icons";
 import { filterProducts } from "@/features/products/data/products";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionary";
@@ -20,7 +20,9 @@ interface HeaderSearchProps {
 export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const listboxId = useId();
 
   const results = useMemo(() => {
@@ -36,6 +38,7 @@ export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
     function handlePointerDown(event: MouseEvent) {
       if (!containerRef.current?.contains(event.target as Node)) {
         setIsOpen(false);
+        setIsMobileExpanded(false);
       }
     }
 
@@ -43,8 +46,26 @@ export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
     return () => document.removeEventListener("mousedown", handlePointerDown);
   }, []);
 
+  useEffect(() => {
+    if (isMobileExpanded) {
+      inputRef.current?.focus();
+    }
+  }, [isMobileExpanded]);
+
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div
+      className={`${styles.container} ${isMobileExpanded ? styles.containerExpanded : ""}`}
+      ref={containerRef}
+    >
+      <button
+        type="button"
+        className={styles.mobileTrigger}
+        onClick={() => setIsMobileExpanded(true)}
+        aria-label={dictionary.search.label}
+      >
+        <SearchIcon />
+      </button>
+
       <form
         action={localizedPath(locale, "/products")}
         method="get"
@@ -53,6 +74,7 @@ export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
         autoComplete="off"
       >
         <Input
+          ref={inputRef}
           type="search"
           name="q"
           value={query}
@@ -64,11 +86,24 @@ export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
           onKeyDown={(event) => {
             if (event.key === "Escape") {
               setIsOpen(false);
+              setIsMobileExpanded(false);
             }
           }}
           wrapperClassName={styles.field}
           placeholder={dictionary.search.placeholder}
           leadingIcon={<SearchIcon />}
+          trailingIcon={
+            isMobileExpanded ? (
+              <button
+                type="button"
+                className={styles.closeButton}
+                onClick={() => setIsMobileExpanded(false)}
+                aria-label={dictionary.search.close}
+              >
+                <CloseIcon />
+              </button>
+            ) : undefined
+          }
           aria-label={dictionary.search.label}
           role="combobox"
           aria-expanded={showDropdown}
@@ -87,7 +122,10 @@ export function HeaderSearch({ locale, dictionary }: HeaderSearchProps) {
                   <Link
                     href={localizedPath(locale, `/products/${product.slug}`)}
                     className={styles.result}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsMobileExpanded(false);
+                    }}
                   >
                     <Image
                       src={product.image}
