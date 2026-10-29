@@ -1,7 +1,7 @@
-export const SITE_URL = "https://example.com";
+export const SITE_URL = "https://om-ahmed.vercel.app";
 
 /** International format, no "+" or spaces, used for wa.me links. */
-export const WHATSAPP_NUMBER = "201000608764";
+export const WHATSAPP_NUMBER = "201159331449";
 
 export const MAPS_URL = "https://maps.app.goo.gl/gHjMt6rjE5y8aPc87";
 
