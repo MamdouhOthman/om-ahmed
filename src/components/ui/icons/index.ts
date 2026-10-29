@@ -1,0 +1,10 @@
+export { FacebookIcon } from "./FacebookIcon";
+export { TikTokIcon } from "./TikTokIcon";
+export { ClockIcon } from "./ClockIcon";
+export { SearchIcon } from "./SearchIcon";
+export { GlobeIcon } from "./GlobeIcon";
+export { CartIcon } from "./CartIcon";
+export { CheckIcon } from "./CheckIcon";
+export { MinusIcon } from "./MinusIcon";
+export { PlusIcon } from "./PlusIcon";
+export { LogoMark } from "./LogoMark";

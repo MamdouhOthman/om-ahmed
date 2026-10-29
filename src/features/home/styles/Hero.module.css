@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--surface-muted) 0%,
+    var(--background) 65%
+  );
+}
+
+.inner {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    padding-block: 5rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  text-align: start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--foreground-muted);
+  max-width: 34rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0.5rem 3rem;
+}
+
+.blobOne,
+.blobTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.blobOne {
+  width: 16rem;
+  height: 16rem;
+  background: var(--accent);
+  inset-inline-end: -2rem;
+  top: -2rem;
+}
+
+.blobTwo {
+  width: 12rem;
+  height: 12rem;
+  background: var(--foreground);
+  inset-inline-start: -1.5rem;
+  bottom: -1.5rem;
+  opacity: 0.12;
+}
+
+.collage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 21rem;
+}
+
+.mainTile {
+  width: 78%;
+  margin-inline-start: auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 20px 45px -15px rgb(0 0 0 / 0.3);
+}
+
+.secondTile,
+.thirdTile {
+  position: absolute;
+  width: 42%;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  background: var(--surface);
+  border: 4px solid var(--surface);
+  box-shadow: 0 12px 28px -10px rgb(0 0 0 / 0.3);
+}
+
+.secondTile {
+  inset-inline-start: 0;
+  bottom: -1.5rem;
+  transform: rotate(-6deg);
+}
+
+.thirdTile {
+  inset-inline-start: 6%;
+  top: -1.5rem;
+  transform: rotate(5deg);
+}
+
+.deliveryBadge,
+.visualBadge {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px -8px rgb(0 0 0 / 0.25);
+}
+
+.deliveryBadge {
+  inset-inline-end: 0;
+  top: 10%;
+}
+
+.visualBadge {
+  inset-inline-end: 4%;
+  bottom: -1rem;
+}

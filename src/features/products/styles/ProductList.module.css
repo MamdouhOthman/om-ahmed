@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.price {
+  color: var(--foreground-muted);
+  font-weight: 600;
+}
+
+.empty {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+  color: var(--foreground-muted);
+}

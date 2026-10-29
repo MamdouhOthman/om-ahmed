@@ -1,0 +1,87 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.control:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.control.invalid {
+  border-color: #dc2626;
+}
+
+.element {
+  width: 100%;
+  min-width: 0;
+  padding: 0.65rem 0.9rem;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.element::placeholder {
+  color: var(--foreground-muted);
+}
+
+textarea.element {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.hasLeadingIcon .element {
+  padding-inline-start: 0.25rem;
+}
+
+.hasTrailingIcon .element {
+  padding-inline-end: 0.25rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 0.9rem;
+  color: var(--foreground-muted);
+  flex: 0 0 auto;
+}
+
+.trailing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline-end: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.helperText {
+  font-size: 0.8rem;
+  color: var(--foreground-muted);
+}
+
+.errorText {
+  font-size: 0.8rem;
+  color: #dc2626;
+}

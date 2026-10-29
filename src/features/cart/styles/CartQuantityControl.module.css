@@ -1,0 +1,57 @@
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.addButton:hover,
+.addButton:focus-visible {
+  background: var(--surface-muted);
+  border-color: var(--accent);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.stepperButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  cursor: pointer;
+}
+
+.stepperButton:hover,
+.stepperButton:focus-visible {
+  background: var(--accent-hover);
+}
+
+.stepperValue {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  color: var(--foreground);
+}

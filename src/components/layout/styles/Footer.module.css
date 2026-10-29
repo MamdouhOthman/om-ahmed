@@ -1,0 +1,37 @@
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.address {
+  color: var(--foreground-muted);
+}
+
+.mapsLink {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mapsLink:hover,
+.mapsLink:focus-visible {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  color: var(--foreground-muted);
+}

@@ -1,0 +1,176 @@
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground-muted);
+}
+
+.back:hover,
+.back:focus-visible {
+  color: var(--accent);
+}
+
+.backArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  transition: border-color 0.15s ease;
+}
+
+.back:hover .backArrow,
+.back:focus-visible .backArrow {
+  border-color: var(--accent);
+}
+
+.layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: stretch;
+  }
+}
+
+.media {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--surface-muted);
+  box-shadow: 0 20px 45px -20px rgb(0 0 0 / 0.2);
+}
+
+/* Matches the image container's height to the info card beside it. */
+@media (min-width: 768px) {
+  .media {
+    position: sticky;
+    top: 5.5rem;
+    height: 100%;
+    min-height: 22rem;
+  }
+
+  .media > div {
+    height: 100%;
+  }
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.category {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--surface-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.category:hover,
+.category:focus-visible {
+  text-decoration: underline;
+}
+
+.name {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.description {
+  color: var(--foreground-muted);
+  margin-top: -0.5rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+}
+
+.priceBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  background: var(--surface-muted);
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 0.25rem 0;
+}
+
+.details {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+}
+
+/* Keeps the order/cart actions and trust chips pinned to the card's
+   bottom edge, even when the info card is stretched taller than its
+   content (to match the image height beside it). */
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.quantityWrap {
+  width: 11rem;
+  max-width: 100%;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.trustChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--foreground-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}

@@ -1,0 +1,39 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.primary:hover,
+.primary:focus-visible {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: transparent;
+  color: inherit;
+  border-color: var(--border-color);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  background: var(--surface-muted);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
