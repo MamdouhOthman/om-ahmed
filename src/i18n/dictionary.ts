@@ -5,6 +5,8 @@ export interface Dictionary {
     home: string;
     products: string;
     contact: string;
+    menu: string;
+    closeMenu: string;
   };
   hero: {
     badge: string;
@@ -37,6 +39,7 @@ export interface Dictionary {
     label: string;
     placeholder: string;
     clear: string;
+    close: string;
   };
   cart: {
     viewCart: string;

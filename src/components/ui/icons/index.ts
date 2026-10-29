@@ -8,3 +8,5 @@ export { CheckIcon } from "./CheckIcon";
 export { MinusIcon } from "./MinusIcon";
 export { PlusIcon } from "./PlusIcon";
 export { LogoMark } from "./LogoMark";
+export { MenuIcon } from "./MenuIcon";
+export { CloseIcon } from "./CloseIcon";

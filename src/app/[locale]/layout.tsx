@@ -56,6 +56,11 @@ export async function generateMetadata({
       description: dictionary.siteDescription,
       type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: dictionary.siteName,
+      description: dictionary.siteDescription,
+    },
   };
 }
 

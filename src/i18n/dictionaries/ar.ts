@@ -1,12 +1,14 @@
 import type { Dictionary } from "@/i18n/dictionary";
 
 const ar: Dictionary = {
-  siteName: "أم أحمد",
-  siteDescription: "أم أحمد — لحوم وفراخ مجمدة طازجة، توصيل لباب البيت.",
+  siteName: "الست أم أحمد",
+  siteDescription: "الست أم أحمد — لحوم وفراخ مجمدة طازجة، توصيل لباب البيت.",
   nav: {
     home: "الرئيسية",
     products: "المنتجات",
     contact: "تواصل معنا",
+    menu: "القائمة",
+    closeMenu: "إغلاق القائمة",
   },
   hero: {
     badge: "🧊 طازج ومجمد، كل يوم",
@@ -44,6 +46,7 @@ const ar: Dictionary = {
     label: "ابحث عن منتج",
     placeholder: "ابحث عن منتج...",
     clear: "مسح البحث",
+    close: "إغلاق البحث",
   },
   cart: {
     viewCart: "عربة التسوق",

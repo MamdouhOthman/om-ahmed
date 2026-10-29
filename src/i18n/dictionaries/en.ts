@@ -1,13 +1,15 @@
 import type { Dictionary } from "@/i18n/dictionary";
 
 const en: Dictionary = {
-  siteName: "Om Ahmed",
+  siteName: "El-Set Om Ahmed",
   siteDescription:
-    "Om Ahmed — fresh frozen meat and poultry products, delivered to your door.",
+    "El-Set Om Ahmed — fresh frozen meat and poultry products, delivered to your door.",
   nav: {
     home: "Home",
     products: "Products",
     contact: "Contact",
+    menu: "Menu",
+    closeMenu: "Close menu",
   },
   hero: {
     badge: "🧊 Fresh & Frozen, Delivered Daily",
@@ -45,6 +47,7 @@ const en: Dictionary = {
     label: "Search products",
     placeholder: "Search for a product...",
     clear: "Clear search",
+    close: "Close search",
   },
   cart: {
     viewCart: "Shopping cart",

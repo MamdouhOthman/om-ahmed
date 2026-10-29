@@ -3,6 +3,7 @@ import styles from "@/components/layout/styles/Header.module.css";
 import { CartButton } from "@/components/layout/CartButton";
 import { HeaderSearch } from "@/components/layout/HeaderSearch";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { MobileNav } from "@/components/layout/MobileNav";
 import { LogoMark } from "@/components/ui/icons";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionary";
@@ -38,6 +39,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
         <div className={styles.actions}>
           <CartButton locale={locale} label={dictionary.cart.viewCart} />
           <LanguageSwitcher locale={locale} label={dictionary.languageSwitcher.label} />
+          <MobileNav locale={locale} dictionary={dictionary} />
         </div>
       </div>
     </header>

@@ -30,9 +30,9 @@ export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
   const href = localizedPath(targetLocale, basePath);
 
   return (
-    <Link href={href} className={styles.link} hrefLang={targetLocale}>
+    <Link href={href} className={styles.link} hrefLang={targetLocale} aria-label={label}>
       <GlobeIcon />
-      {label}
+      <span className={styles.label}>{label}</span>
     </Link>
   );
 }

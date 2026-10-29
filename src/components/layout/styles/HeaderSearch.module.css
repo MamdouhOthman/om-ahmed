@@ -6,15 +6,82 @@
   margin: 0 auto;
 }
 
+.mobileTrigger {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .container {
     max-width: none;
     margin: 0;
+    width: auto;
+  }
+
+  .mobileTrigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .mobileTrigger:hover,
+  .mobileTrigger:focus-visible {
+    background: var(--surface-muted);
+  }
+
+  .form {
+    display: none;
+  }
+
+  /* When expanded, the container itself becomes a fixed full-width bar
+     that replaces the header row, so the dropdown below still lines up
+     with it (same positioning context). */
+  .containerExpanded {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .containerExpanded .mobileTrigger {
+    display: none;
+  }
+
+  .containerExpanded .form {
+    display: block;
+    width: 100%;
   }
 }
 
 .field {
   width: 100%;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  color: var(--foreground);
 }
 
 .dropdown {
